@@ -1,0 +1,19 @@
+{
+  "name": "wikistack",
+  "version": "1.0.0",
+  "description": "\"A wiki for Fullstack\"",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon -e html,js,css app.js"
+  },
+  "author": "John Quiwa and Andrew Ash",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "mongoose": "^4.3.7",
+    "morgan": "^1.6.1",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {}
+}
