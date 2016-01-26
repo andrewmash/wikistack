@@ -1,9 +1,29 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <h3>Pages</h3>
-  <hr>
-  <ul class="list-unstyled">
-    <!-- PLACEHOLDER LIST OF PAGES -->
-  </ul>
+
+	{% if pages.length > 0 %}
+		<ul>
+			{% for page in pages %}
+	  			<li>{{ page | pageLink }}</li>
+			{% endfor %}
+		</ul>
+		  <form method="GET" action="/wiki/search">
+    
+    	<div class="form-group">
+      <label for="title" class="col-sm-2 control-label">Search by tags</label>
+      <div class="col-sm-10">
+        <input name="tags" type="text" class="form-control"/>
+      </div>
+    </div>
+
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">search</button>
+    </div>
+  
+  </form>
+	{% else %}
+			There are no pages. Why don't you <a href='/wiki/add'>add one</a>?
+	{% endif %}
+
 {% endblock %}
